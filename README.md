@@ -1,0 +1,1 @@
+# 2026-Full-Stack-Dev-Study
