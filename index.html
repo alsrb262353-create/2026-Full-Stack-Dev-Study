@@ -28,6 +28,8 @@
         </div>
     </header>
 
+    <button class="btn-theme" aria-label="다크 모드 전환">🌙</button>
+
     <!--Main 영역-->
     <section id="main">
         <div>
@@ -41,6 +43,10 @@
             <p>
                 프론트엔드부터 백엔드, 배포까지 한번에 경험하는 8주 완성 풀스택 개발 스터디입니다.
                 혼자서는 끝까지 오나주하기 어료웠던 사이드 프로잭트, 이번엔 함께 끝까지 만들어 봅시다.
+            </p>
+            <p class="clock">
+                <span class="clock-date">----년 --월 --일 (-)</span>
+                <span class="clock-time">--:--:--</span>
             </p>
         </div>
     </section>
@@ -140,7 +146,9 @@
             <label>Email</label>
             <input class="apply-field" type="email" placeholder="예 : alsrb262353@gmail.com">
             <label>참여동기</label>
-            <textarea class="apply-field apply-textarea" placeholder="스터디에 참여하고 싶은 이유를 간단히 적어주새요"></textarea>
+            <textarea class="apply-field apply-textarea" maxlength="200" placeholder="스터디에 참여하고 싶은 이유를 간단히 적어주새요"></textarea>
+            <p class="char-count">200자</p>
+
             <input class="apply-btn" type="submit" value="지원하기">
         </form>
 
