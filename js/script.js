@@ -66,3 +66,42 @@ function updateClock() {
 updateClock();
 
 setInterval(updateClock, 1000);
+
+/* ================================
+ 커리큘럼 탭 메뉴
+ ================================*/
+
+const tabBtns = document.querySelectorAll('.tab-btn');     // 버튼 3개 
+const tabPanels = document.querySelectorAll('.tab-panel'); // 패널 3개 
+ 
+tabBtns.forEach((tab) => {          // 버튼을 하나씩 꺼내서 
+  tab.addEventListener('click', () => {   // 각각에 클릭 이벤트를 단다
+    // 모든 탭 버튼과 패널에서 'active'를 제거한다. 
+    tabBtns.forEach((b) => b.classList.remove('active'));   // ① 모든 버튼 끄기 
+    tabPanels.forEach((p) => p.classList.remove('active')); // ① 모든 패널 끄기
+
+    // 클릭한 번튼과, 그 버든의 data-tab 값과 같은 id 를 가진 패널에 'active'를 붙인다.
+    tab.classList.add('active');                             // ② 클릭한 버튼 켜기 
+    document.getElementById(tab.dataset.tab).classList.add('active'); // ② 짝 패널 켜기
+
+  }); 
+});
+
+// ======================================
+// 스터디 사진 갤러리
+// ======================================
+
+const galleryMain = document.querySelector('.gallery-main');
+const galleryThumbs = document.querySelectorAll('.gallery-thumbs img');
+
+galleryThumbs.forEach((thumb) => { 
+  thumb.addEventListener('click', () => { 
+    // 큰 이미지의 수소(src)와 설명(alt)을 클릭한 썸네일 것으로 바꾼다.
+    galleryMain.src = thumb.src;   // 큰 이미지의 주소를 클릭한 썸네일 것으로 
+    galleryMain.alt = thumb.alt; 
+
+    // 선택 표시(active)를 클릭한 썸네일로 옮긴다.
+    galleryThumbs.forEach((t) => t.classList.remove('active')); 
+    thumb.classList.add('active'); 
+  }); 
+}); 
